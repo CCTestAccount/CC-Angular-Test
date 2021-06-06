@@ -1,0 +1,38 @@
+<div class="page-layout">
+    <mat-card class="card shadow">
+        <mat-form-field class="full-width">
+          <mat-label>Projekt suchen</mat-label>
+          <input matInput placeholder="Nach Projekt suchen..." [(ngModel)]="search" (keyup.enter)="onSearch()" />
+        </mat-form-field>
+      </mat-card>
+    <div class="grid">
+        <mat-card class="project-count">
+            <h5>Projekte</h5>
+            <h4>{{projectCount}}</h4>
+        </mat-card>
+        <mat-card>
+            <h5>Projektstatus</h5>
+            <div>
+                <h4 class="td_review">{{projectsInReview}}</h4>
+                <h4 class="td_action">{{projectsInArbeit}}</h4>
+                <h4>{{projectsOffen}}</h4>
+            </div>
+        </mat-card>
+        <mat-card>
+            <h5>Neue Projekte</h5>
+            <ul>
+                <li *ngFor="let project of projectNames | slice:0:3; let i=index">
+                    <span>{{project}}</span>
+                    <button mat-icon-button (click)="navigateTo('/editor/project/' + project);">
+                        <mat-icon>arrow_right_alt</mat-icon>
+                      </button>
+                </li>
+            </ul>
+        </mat-card>
+        <mat-card class="create-project-card">
+            <button class="plus" mat-fab type="primary" (click)="navigateTo('/editor/project');">
+                <mat-icon>add</mat-icon>
+              </button>
+        </mat-card>
+    </div>
+</div>

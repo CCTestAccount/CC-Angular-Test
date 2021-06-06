@@ -1,0 +1,21 @@
+.project-editor > form > h5 {
+  float: left;
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  font-weight:200;
+}
+
+.mat-form-field {
+  margin-bottom: 10px
+}
+
+.project-editor-content {
+  padding-top: 25px;
+}
+
+.project-editor-content:first-child {
+  padding-right: 25px;
+}
+
+mat-grid-list {
+  padding-bottom: calc(25% - 62.5px) !important;
+}

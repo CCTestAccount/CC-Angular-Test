@@ -1,0 +1,79 @@
+<div class="page-layout">
+  <mat-card class="project-editor card shadow">
+    <form [formGroup]="form" class="form">
+      <h5>Projekt erstellen</h5>
+      <mat-grid-list class="project-editor-content" cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+          <div class="padding-right flex-column">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input
+                formControlName="name"
+                matInput
+                placeholder="Projektname eingeben..."
+              />
+              <mat-error *ngIf="hasError('name', 'required')">Name benötigt</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option value="Offen">Offen</mat-option>
+                <mat-option value="In Arbeit">In Arbeit</mat-option>
+                <mat-option value="In Review">In Review</mat-option>
+                <mat-option value="Abgeschlossen">Abgeschlossen</mat-option>
+              </mat-select>
+              <mat-error *ngIf="hasError('status', 'required')">Status benötigt</mat-error>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="flex-column">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Von-Datum</mat-label>
+              <input
+              formControlName="from"
+                matInput
+                [matDatepicker]="vonDatum"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="vonDatum"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #vonDatum></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Bis-Datum</mat-label>
+              <input
+              formControlName="until"
+                matInput
+                [matDatepicker]="bisDatum"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="bisDatum"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #bisDatum></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-form-field class="full-width" appearance="fill" >
+        <mat-label>Beschreibung</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Beschreibung eingeben..."
+          value=""
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </mat-card>
+  <div class="hover-button">
+    <button mat-fab color="accent" (click)="saveProject()" [disabled]="!form.valid">
+      <mat-icon>save</mat-icon>
+    </button>
+    <button mat-fab color="danger" *ngIf="!isNameNull" (click)="deleteProject()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

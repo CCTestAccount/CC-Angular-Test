@@ -1,0 +1,57 @@
+.login-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  background-color: #0093E9;
+  background: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  background-size: 400% 400%;
+  transition: all 0.5s ease-out;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 92%}
+  50%{background-position:100% 9%}
+  100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 92%}
+  50%{background-position:100% 9%}
+  100%{background-position:0% 92%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 92%}
+  50%{background-position:100% 9%}
+  100%{background-position:0% 92%}
+}
+
+.login-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 350px
+}
+
+.form {
+  padding: 25px 0px 25px 0px; 
+}
+
+.form > button {
+  width: 125px;
+  float: right;
+}
+
+.form > * {
+  margin-bottom: 10px;
+  width: 100%;
+}

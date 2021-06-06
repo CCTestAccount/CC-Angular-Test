@@ -1,0 +1,84 @@
+<div class="login-container">
+  <mat-card class="login-dialog">
+    <mat-tab-group>
+      <mat-tab label="Login">
+        <form [formGroup]="form" class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>E-Mail eingeben</mat-label>
+            <input formControlName="mail" matInput type="text" />
+            <mat-error *ngIf="hasError('mail', 'required')">E-Mail benötigt</mat-error>
+            <mat-error *ngIf="hasError('mail', 'email')">Falsches Format</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Passwort eingeben</mat-label>
+            <input
+            formControlName="password"
+              matInput
+              [type]="hidePassword ? 'password' : 'text'"
+            />
+            <mat-error *ngIf="hasError('password', 'required')">Passwort benötigt</mat-error>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'"
+            >
+              <mat-icon
+                >{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon
+              >
+            </button>
+          </mat-form-field>
+          <button [disabled]="!form.valid" mat-raised-button color="primary" (click)="login()">
+            Login
+          </button>
+        </form>
+      </mat-tab>
+      <mat-tab label="Registrieren">
+        <form [formGroup]="form" class="form">
+          <mat-form-field appearance="fill">
+            <mat-label>E-Mail eingeben</mat-label>
+            <input formControlName="mail" matInput type="text" />
+            <mat-error *ngIf="hasError('mail', 'required')">E-Mail benötigt</mat-error>
+            <mat-error *ngIf="hasError('mail', 'email')">Falsches Format</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Passwort eingeben</mat-label>
+            <input
+            formControlName="password"
+              matInput
+              [type]="hidePassword ? 'password' : 'text'"
+            />
+            <mat-error *ngIf="hasError('password', 'required')">Passwort benötigt</mat-error>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'"
+            >
+              <mat-icon
+                >{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon
+              >
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Passwort bestätigen</mat-label>
+            <input formControlName="confirmPassword" matInput [type]="hidePassword ? 'password' : 'text'" />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'"
+            >
+              <mat-icon
+                >{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon
+              >
+            </button>
+          </mat-form-field>
+          <button [disabled]="!form.valid" mat-raised-button color="primary" (click)="register()">
+            Registrieren
+          </button>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

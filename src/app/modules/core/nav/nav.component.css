@@ -1,0 +1,14 @@
+.nav-content {
+  min-width: 30%;
+}
+
+h5 {
+  text-align: left;
+  font-size:1rem;
+  padding-left:16px;
+}
+
+.nav-content > * {
+  width: 100%;
+}
+

@@ -1,0 +1,53 @@
+
+.create-project-card
+    min-height: 100px
+
+@at-root mat-card
+    position: relative
+    margin-right: 25px
+    margin-bottom: 25px
+    min-width: 250px
+    max-height: 250px
+    padding: 25px
+    h5
+        font-size: 20px
+        margin-bottom: 25px
+    h4
+        color: #0992d1
+        font-size: 40px
+        line-height: 75px
+    *
+        font-weight: 200 !important
+        text-align: center
+        margin: 0 auto
+    div
+        display: flex
+    ul, li
+        line-height: 40px
+        list-style: none
+        padding: 0
+        margin: 0
+        text-align: left
+        button
+            float: right
+
+@at-root .card
+    margin: 0
+    max-width: 1225px
+    *
+        text-align: left !important
+
+@at-root mwl-gauge
+    width: 75px
+    height: 75px
+    display: block
+
+.grid
+    display: flex
+    flex-wrap: wrap
+
+.plus
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)

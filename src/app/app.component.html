@@ -1,0 +1,10 @@
+<div>
+  <header></header>
+  <nav></nav>
+  <div [@slide]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <div class="spinner" *ngIf="spinnerVisible">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>

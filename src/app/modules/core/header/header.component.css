@@ -1,0 +1,15 @@
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar > span {
+  margin-top: 2px;
+}
+
+.mat-toolbar > span:nth-child(2) {
+  margin-left: 10px
+}
+
+.user-name{
+  font-size: 1rem;
+}

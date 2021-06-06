@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="eventBusService.emit('on-toggle-nav')"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{title}}</span>
+  <span class="header-spacer"></span>
+  <button
+    mat-icon-button
+  >
+    <mat-icon>person</mat-icon>
+  </button>
+  <span class="user-name">{{currentUserName}}</span>
+</mat-toolbar>
